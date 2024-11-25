@@ -1,0 +1,34 @@
+---
+import NavBar from '../NavBar/index.astro';
+import { RainbowButton } from "@/components/ui/rainbow-button.tsx";
+const page = "https://www.roblox.com/users/123456789/profile";
+---
+
+<section
+    class='bg-[url("./Header_image_Black&White.jpg")] bg-cover h-screen shadow-[inset_0px_-170px_100px_-50px_rgba(0,0,0,1)]'
+  >
+    <NavBar destination={"#"} />
+    <section class="flex justify-center pt-52">
+      <div class="flex flex-col items-center gap-20 mx-4">
+        <img src={"./Header-Text_Image.png"} alt="" />
+        <section>
+          <a href='https://www.roblox.com/communities/7958191/M-C-Game-Studios#!/about'>
+            <RainbowButton>
+              <img src={"./Roblox_Logo.png"} alt="Logo" class='mr-2'> 
+              Entrar al grupo
+            </RainbowButton>;
+          </a>
+
+          <a href='https://x.com/manuelc_0?lang=en'>
+            <RainbowButton>
+              <img src={"X_Logo.svg"} alt="Logo" class='mr-2'> 
+              Seguir en X
+            </RainbowButton>;
+          </a>
+        </section>
+        <section class="mt-20 animate-up-down">
+          <img src={"./ScrollDown.svg"} alt="Scroll" class="w-32" />
+        </section>
+      </div>
+    </section>
+  </section>

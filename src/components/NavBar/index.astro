@@ -1,0 +1,12 @@
+---
+interface props {
+    destination: string
+}
+
+const { destination } = Astro.props;
+---
+<div class='px-4 py-4 flex'>
+    <a href={destination} class='w-full'>
+        <img src={'./m&c-logo.png'} alt='M&C Logo' class='w-20'>
+    </a>
+</div>

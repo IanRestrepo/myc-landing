@@ -1,0 +1,21 @@
+---
+interface props {
+    pageTitle: string;
+}
+
+const { pageTitle } = Astro.props;
+import Footer from "@/components/Footer/index.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{ pageTitle }</title>
+</head>
+<body class="bg-black overflow-x-hidden">
+    <slot />
+    <Footer />
+</body>
+</html>

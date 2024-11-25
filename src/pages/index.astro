@@ -1,16 +1,34 @@
 ---
+import "@/styles/globals.css";
+
+import Layout from "../layouts/Layout.astro";
+import Header from "@/components/Header/index.astro";
+import OurProjects from "@/components/OurProjects/index.astro";
+import Slider from "@/components/Slider/index.astro";
+import GridPatternSection from "@/components/GridPatternSection/index.astro";
+import { BentoGridSection } from "@/components/BentoGrid";
+import { MarqueeDemo } from "@/components/Marquee";
+import { DotPatternDemo } from "@/components/DotPatternText/index.tsx";
+import { RippleDemo } from "@/components/Ripple/index.tsx";
+import OurTeam from "@/components/OurTeam/index.astro";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout pageTitle="Inicio | M&C Games Studio">
+  <Header />
+  <Slider />
+  <section class="px-40">
+    <GridPatternSection text="¿Quienes somos?" hasButton={true}/>
+    <BentoGridSection />
+  </section>
+  <DotPatternDemo />
+  <MarqueeDemo />
+  <OurProjects />
+  <section class=" w-3/4 m-auto py-20 -rotate-1">
+    <RippleDemo />
+  </section>
+  <section class="h-max-[500px] pb-20 bg-white">
+    <GridPatternSection text={"Nuestro Equipo"} darkText={true} />
+    <OurTeam />
+  </section>
+</Layout>
