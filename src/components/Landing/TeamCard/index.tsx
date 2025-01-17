@@ -6,9 +6,10 @@ interface MyButtonProps {
   role: string;
   image: string;
   bgimage: string;
+  desc: string;
 }
 
-export function CardDemo({ title, role, image, bgimage }: MyButtonProps) {
+export function CardDemo({ title, role, image, bgimage, desc }: MyButtonProps) {
   return (
     <div className="max-w-xs w-full group">
       <div
@@ -50,8 +51,7 @@ export function CardDemo({ title, role, image, bgimage }: MyButtonProps) {
               {role}
             </h1>
             <p className="font-normal text-sm text-gray-50 my-4">
-              Card with Author avatar, complete name and time to read - most
-              suitable for blogs.
+              {desc}
             </p>
           </div>
         </div>
