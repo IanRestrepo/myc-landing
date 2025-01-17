@@ -1,0 +1,37 @@
+---
+interface props {
+    game_name: string,
+    game_visits: string,
+    game_normal: string,
+    game_image: string,
+    game_url: string,
+}
+
+const { game_name, game_visits, game_normal, game_image, game_url } = Astro.props;
+const gameImageUrl = game_image || "Unknown_game.png";
+---
+
+<div class="bg-zinc-900 flex flex-col rounded-lg shadow-lg w-64 hover:-translate-y-2 transition cursor-pointer">
+
+    <div class="h-72 bg-cover bg-center rounded-t-lg" style={`background-image: url('./${gameImageUrl}')`}></div>
+
+    <div class="flex items-center justify-center text-center space-x-2 mb-1 mt-4">
+        <span class="text-white text-lg font-semibold">{game_name}</span>
+        <img src="./RobloxVerified.png" alt="Verificado" class="h-4" />
+    </div>
+    
+    <section class="flex justify-center mt-2 mb-4">
+        <span class="text-white text-center">
+            <span class="text-xl font-bold">{game_visits}</span> 
+            <small class="text-gray-400 block">Visitas</small>
+        </span>
+        <span class="text-white text-center mx-2">
+            <span class="text-xl font-bold">{game_normal}</span> 
+            <small class="text-gray-400 block">Visitas Diarias</small>
+        </span>
+    </section>
+    
+    <a href={game_url || '#'} class="mt-2 mb-4 mx-4 block text-white bg-zinc-800 py-2 rounded-lg hover:bg-zinc-700 transition duration-200 text-center">
+        Jugar Ahora
+    </a>
+</div>

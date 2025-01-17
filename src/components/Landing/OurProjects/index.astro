@@ -1,0 +1,50 @@
+---
+import Card from '@/components/Card/index.astro';
+import { GlareCard } from "@/components/ui/glare-card";
+---
+
+<section class="bg-black flex flex-col items-center py-5">
+	<span>
+		<img src="./NuestrosProyectos.svg" />
+	</span>
+	<section class="flex flex-col md:flex-row flex-wrap justify-center p-4 md:p-6 gap-5 bg-black">
+
+		<Card
+			game_image={'Header_image_Black&White.jpg'}
+			game_name={"Trucking Empire"}
+			game_visits={"+20M"}
+			game_normal={"+10K"}
+			game_url={"https://www.roblox.com/games/7345818711/LAST-DAYS-Trucking-Empire"}
+		/>
+	
+		<GlareCard className="flex flex-col items-center justify-center" client:load>
+			<img
+			  class="h-full w-full absolute inset-0 object-cover"
+			  src="/Header_image_Black&White.jpg"
+			/>
+		  </GlareCard>
+
+		  <GlareCard className="flex flex-col items-center justify-center" client:load>
+			<img
+			  class="h-full w-full absolute inset-0 object-cover"
+			  src="/Header_image_Black&White.jpg"
+			/>
+		  </GlareCard>
+
+		  <GlareCard className="flex flex-col items-center justify-center" client:load>
+			<img
+			  class="h-full w-full absolute inset-0 object-cover"
+			  src="/Header_image_Black&White.jpg"
+			/>
+		  </GlareCard>
+
+		  <GlareCard className="flex flex-col items-start justify-end py-8 px-6" client:load>
+			<p class="font-bold text-white text-lg">The greatest trick</p>
+			<p class="font-normal text-base text-neutral-200 mt-4">
+			  The greatest trick the devil ever pulled was to convince the world
+			  that he didn&apos;t exist.
+			</p>
+		  </GlareCard>
+
+	</section>
+  </section>

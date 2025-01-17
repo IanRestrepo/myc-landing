@@ -1,32 +1,37 @@
 ---
 import "@/styles/globals.css";
 
+import Album from "@/components/Landing/Album/Album.astro";
+import GridPatternSection from "@/components/Landing/GridPatternSection/index.astro";
+import { BentoGridSection } from "@/components/Landing/BentoGrid";
+import { DotPatternDemo } from "@/components/Landing/DotPatternText";
+import Header from "@/components/Landing/Header/index.astro";
+import { MarqueeDemo } from "@/components/Landing/Marquee";
+import ScrollWords from "@/components/Landing/ScrollWords/ScrollBasedVelocity";
+import ScrollWordsBrands from "@/components/Landing/ScrollWords/ScrollBasedVelocityBrands";
+import TextRevealByWord from "@/components/Landing/TextReveal";
+import OurTeam from "@/components/Landing/OurTeam/index.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "@/components/Header/index.astro";
-import OurProjects from "@/components/OurProjects/index.astro";
-import Slider from "@/components/Slider/index.astro";
-import GridPatternSection from "@/components/GridPatternSection/index.astro";
-import { BentoGridSection } from "@/components/BentoGrid";
-import { MarqueeDemo } from "@/components/Marquee";
-import { DotPatternDemo } from "@/components/DotPatternText/index.tsx";
-import { RippleDemo } from "@/components/Ripple/index.tsx";
-import OurTeam from "@/components/OurTeam/index.astro";
-
 ---
 
 <Layout pageTitle="Inicio | M&C Games Studio">
   <Header />
-  <Slider />
-  <section class="px-40">
-    <GridPatternSection text="¿Quienes somos?" hasButton={true}/>
+  <DotPatternDemo /> //! Change Name
+  <MarqueeDemo /> //! Change Name
+  <ScrollWordsBrands client:load />
+
+  <section class="lg:px-40 px-20">
+    <GridPatternSection text="¿Quienes somos?" hasButton={true} />
     <BentoGridSection />
   </section>
-  <DotPatternDemo />
-  <MarqueeDemo />
-  <OurProjects />
-  <section class=" w-3/4 m-auto py-20 -rotate-1">
-    <RippleDemo />
-  </section>
+  <Album />
+  <ScrollWords client:load />
+  <br />
+
+  <TextRevealByWord
+    text="¿Estas listo para vivir esta experiencia?"
+    client:load
+  />
   <section class="h-max-[500px] pb-20 bg-white">
     <GridPatternSection text={"Nuestro Equipo"} darkText={true} />
     <OurTeam />
